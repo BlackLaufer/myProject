@@ -5,11 +5,15 @@
   height: $btn-heigth;
   color: #fff;
   font-size: $btn;
+  position: relative;
+  padding-top: 10px;
+  padding-left: 10px;
 
   a {
     text-decoration: none;
     color: white;
     padding-left: 5px;
+    padding-top: 5px;
 
   }
 
@@ -19,7 +23,7 @@
 }
 
 .btn-silver {
-	@include btn-silver;
+  @include btn-silver;
 }
 
 @mixin btn-orange {
@@ -42,23 +46,36 @@
 .btn-disabled {
   @include btn-disabled;
 
-  a:hover{
+  a:hover {
     pointer-events: none;
     cursor: default;
+  }
+}
+
+/* Images icon */
+
+@mixin image($w, $h) {
+  &:before {
+    content: "";
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-bottom: -2px;
+    display: inline-block;
+    width: $w;
+    height: $h;
   }
 }
 
 /* Tabs */
 
 @mixin tabs($color) {
-  &:before{
-    content:"  ";
+  @include image(16px, 16px);
+
+  &:before { 
     background-color: $color;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
     border-radius: 50%;
-    border: 1px solid black;
+    margin-left: 10px ;
+	  margin-bottom: -2px;
   }
 }
 
@@ -68,4 +85,107 @@
 
 .orange-tabs {
   @include tabs(orange);
+}
+
+/* Images Picture */
+
+@mixin image_picture($name)
+{
+  @include image(16px, 16px);
+
+  &:before {
+    content: "";
+    background-image: url($name);
+    position: relative;
+    background-repeat: no-repeat;
+  }
+}
+
+
+.links {
+	@include image_picture('../images/links.png');
+}
+
+.details {
+	@include image_picture('../images/details.png');
+}
+
+.banners {
+	@include image_picture('../images/banners.png');
+}
+
+.payout {
+	@include image_picture('../images/payout.png');
+}
+
+.personal {
+	@include image_picture('../images/personal.png');
+
+}
+
+.postback {
+	@include image_picture('../images/postback.png');
+}
+
+.star {
+	@include image_picture('../images/star.png');
+}
+
+.dotted {
+	@include image_picture('../image/dotted.png');
+}
+
+.photo {
+	@include image_picture('../images/photo.png');
+	@include image(43px, 43px);
+} 
+
+/* Links */
+
+
+@mixin border-bottom {
+
+	width: 100%;
+  border-bottom: 1px solid black; 
+  
+	&:hover {
+		background-color: $grey-3;
+		cursor: pointer;
+	}
+}
+
+.border-bottom {
+	@include border-bottom;
+}
+
+.online {
+	&:before {
+
+		content: "";
+		display: inline-block;
+		width: 11px;
+		height: 11px;
+		background-image: url('../images/dotted.png');
+		margin-left: -55px;
+		margin-top: -20px;
+		position: absolute;
+		background-repeat: no-repeat;		
+	}	
+	}
+
+
+.logo {
+	background-image: url('../images/logo.png');
+	width: 86px;
+	height: 33px;
+	background-size: cover;
+	margin-left: 10px;	
+}
+
+.hamburger {
+	background-image: url('../images/hamburger.png');
+	width: 50px;
+	height: 20px;
+	margin-left: 60px;
+	margin-top: 10px;
 }
