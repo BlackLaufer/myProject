@@ -55,10 +55,11 @@
 /* Images icon */
 
 @mixin image($w, $h) {
+
   &:before {
     content: "";
-    margin-left: 20px;
-    margin-right: 15px;
+    margin-left: 10%px;
+    margin-right: 3%;
     margin-bottom: -2px;
     display: inline-block;
     width: $w;
@@ -140,22 +141,45 @@
 	@include image(43px, 43px);
 } 
 
-/* Links */
+/* Form */
+.input-form{
+	padding: 7px;
 
+		/*&:after{
+			content: url('../mini/delete.png'); 
+			margin-left: -2%;
+			width:16px;
+			height: 16px;
+		}*/
+	}
 
+/* Links */ 
 @mixin border-bottom {
 
 	width: 100%;
   border-bottom: 1px solid black; 
+}
+
+@mixin border-bottom-links{
+	@include  border-bottom;
   
 	&:hover {
 		background-color: $grey-3;
-		cursor: pointer;
+    cursor: pointer;
+    @include image_picture('../images/link.png');
+		&:after{
+			content: url('../images/delete.png'); 
+			margin-left: -2%;
+		}
 	}
 }
 
 .border-bottom {
 	@include border-bottom;
+}
+
+.border-bottom-links{
+	@include border-bottom-links;
 }
 
 .online {
@@ -166,7 +190,7 @@
 		width: 11px;
 		height: 11px;
 		background-image: url('../images/dotted.png');
-		margin-left: -55px;
+		margin-left: -4.25%;;
 		margin-top: -20px;
 		position: absolute;
 		background-repeat: no-repeat;		
@@ -177,15 +201,15 @@
 .logo {
 	background-image: url('../images/logo.png');
 	width: 86px;
-	height: 33px;
-	background-size: cover;
-	margin-left: 10px;	
+  height: 34px;
+	background-size: cover;	
+  margin-left: 5%;
 }
 
 .hamburger {
 	background-image: url('../images/hamburger.png');
 	width: 50px;
 	height: 20px;
-	margin-left: 60px;
-	margin-top: 10px;
+  margin-left: 25%;
+	margin-top: 5%;
 }
