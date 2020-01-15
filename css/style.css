@@ -105,6 +105,11 @@
   text-align: right;
 }
 
+.module {
+  background-color: silver;
+  padding: 20px;
+}
+
 /* Buttons */
 .btn-silver {
   background-color: #979797;
@@ -126,6 +131,42 @@
 
 .btn-silver:hover {
   background-color: #E3E3E3;
+}
+
+.btn-orange-2 {
+  background-color: #979797;
+  width: 110px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: #F58220;
+  width: 27.5px;
+  height: 20px;
+  border-radius: 5px;
+  position: absolute;
+  left: 51.5em;
+  top: 5.5em;
+  background-image: url("../images/input-btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-orange-2 a {
+  text-decoration: none;
+  color: white;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.btn-orange-2:hover {
+  background-color: #E3E3E3;
+}
+
+.btn-orange-2:hover {
+  background-color: #FFA200;
 }
 
 .btn-orange {
@@ -385,12 +426,13 @@
 /* Form */
 .input-form {
   padding: 7px;
-  /*&:after{
-			content: url('../mini/delete.png'); 
-			margin-left: -2%;
-			width:16px;
-			height: 16px;
-		}*/
+  border: 1px solid black;
+}
+
+.form-photo {
+  background-image: url("../images/filter.png");
+  background-repeat: no-repeat;
+  background-position: right .5em center;
 }
 
 /* Links */

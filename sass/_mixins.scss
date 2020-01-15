@@ -1,3 +1,7 @@
+.module {
+	background-color: silver;
+	padding: 20px;
+}
 /* Buttons */
 @mixin btn-silver {
   background-color: $grey-2;
@@ -34,6 +38,24 @@
     background-color: $orange-2;
   }
 }
+
+@mixin btn-orange-2 {
+	@include btn-orange;
+	width: $btn-width / 4;
+	height: $btn-heigth / 2;
+	border-radius: 5px;
+	position: absolute;
+	left: 51.5em;
+	top: 5.5em;
+	background-image: url('../images/input-btn.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.btn-orange-2 {
+	@include btn-orange-2;
+}
+
 
 .btn-orange {
   @include btn-orange;
@@ -142,16 +164,16 @@
 } 
 
 /* Form */
-.input-form{
+.input-form {
 	padding: 7px;
-
-		/*&:after{
-			content: url('../mini/delete.png'); 
-			margin-left: -2%;
-			width:16px;
-			height: 16px;
-		}*/
-	}
+  border: 1px solid black;
+  }
+  
+  .form-photo {
+    background-image: url("../images/filter.png");
+      background-repeat: no-repeat;
+      background-position: right .5em center;	
+  }
 
 /* Links */ 
 @mixin border-bottom {
@@ -160,14 +182,14 @@
   border-bottom: 1px solid black; 
 }
 
-@mixin border-bottom-links{
+@mixin border-bottom-links {
 	@include  border-bottom;
   
 	&:hover {
 		background-color: $grey-3;
     cursor: pointer;
     @include image_picture('../images/link.png');
-		&:after{
+		&:after {
 			content: url('../images/delete.png'); 
 			margin-left: -2%;
 		}
@@ -195,7 +217,7 @@
 		position: absolute;
 		background-repeat: no-repeat;		
 	}	
-	}
+}
 
 
 .logo {
